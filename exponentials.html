@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exponentials</title>
+</head>
+<body>
+
+<form name="exponentials" class="theForm">
+<input type="text" class="one" placeholder="value of a"></input>
+<input type="text" class="two" placeholder="value of b"></input>
+<input type="text" class="three" placeholder="value of c"></input>
+<input type="text" class="four" placeholder="value of d"></input>
+<button type="submit" onClick="digestValues()">Find it out!</button>
+</form>
+<script type="text/javascript">
+
+class Variable{
+	constructor(magnitude, power){
+		this.power = power;
+		this.magnitude = magnitude;
+	}
+
+	applyPower(){
+		this.valueAfterPower = this.magnitude;
+		for(let i=0; i<this.power; i++){
+			this.valueAfterPower *= this.magnitude;
+			return this.valueAfterPower;
+		}
+	}
+
+}
+
+//can collect value from textbox
+
+function digestValues(e){
+
+	document.querySelector('.theForm').addEventListener('submit',function(e){
+		e.preventDefault();
+	});
+
+const one = document.querySelector('.one').value;
+const two = document.querySelector('.two').value;
+const three = document.querySelector('.three').value;
+const four = document.querySelector('.four').value;
+
+const a = new Variable(one,2);
+
+
+const b = new Variable(two,2);
+
+
+const c = new Variable(three,2);
+//console.log(c.applyPower());
+
+
+const d = new Variable(four,2);
+
+
+console.log("The result is:", a.applyPower()+b.applyPower() === c.applyPower() + d.applyPower());
+}
+
+</script>
+
+</body>
+</html>
