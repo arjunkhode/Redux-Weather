@@ -2,6 +2,10 @@ table{
 	width: 80%;
 }
 
+tr{
+	margin: 20px;
+}
+
 td svg{
 	max-width: 120px;
 	max-height: 100px;
@@ -9,4 +13,9 @@ td svg{
 
 .input-group{
 	margin:20px 0;
+}
+
+td:last-of-type, td:last-of-type>div{
+height: 100px;
+width: 120px;
 }
